@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Results - Student Portal</title>
+<style>
+:root{--bg:#1f1f1f;--text:#f1f1f1;--primary:#4db8ff;--card:#2a2a2a;}
+[data-theme="light"]{--bg:#f4f4f4;--text:#222;--primary:#0078ff;--card:#fff;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{background:var(--bg);color:var(--text);}
+.navbar{display:flex;justify-content:space-between;align-items:center;background:var(--card);padding:15px 25px;}
+.logo{color:var(--primary);font-weight:bold;}
+nav a{color:var(--text);text-decoration:none;margin-left:18px;}
+nav a:hover,nav a.active{color:var(--primary);border-bottom:2px solid var(--primary);}
+#theme-toggle{margin-left:15px;background:none;border:none;color:var(--text);cursor:pointer;}
+main{text-align:center;padding:40px 20px;min-height:80vh;}
+h2{color:var(--primary);margin-bottom:25px;}
+.table-box{overflow-x:auto;background:var(--card);padding:20px;border-radius:10px;max-width:600px;margin:0 auto;}
+table{width:100%;border-collapse:collapse;}
+th,td{padding:12px;text-align:center;}
+th{color:var(--primary);border-bottom:1px solid var(--primary);}
+tbody tr:hover{background:#333;}
+footer{background:var(--card);text-align:center;color:#aaa;padding:12px;margin-top:40px;}
+</style>
+</head>
+<body>
+<header>
+<div class="navbar">
+<div class="logo">Student Portal</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="results.html" class="active">Results</a>
+<button id="theme-toggle">🌙</button>
+</nav>
+</div>
+</header>
+<main>
+<h2>Exam Results</h2>
+<div class="table-box">
+<table>
+<thead><tr><th>Subject</th><th>Marks</th><th>Grade</th></tr></thead>
+<tbody>
+<tr><td>Java</td><td>85</td><td>A</td></tr>
+<tr><td>DSA</td><td>78</td><td>B+</td></tr>
+<tr><td>Web Dev</td><td>92</td><td>A+</td></tr>
+</tbody>
+</table>
+</div>
+</main>
+<footer><p>&copy; 2025 Student Portal</p></footer>
+<script>
+const t=document.getElementById("theme-toggle");
+t.onclick=()=>{const c=document.documentElement.getAttribute("data-theme");const n=c==="light"?"dark":"light";
+document.documentElement.setAttribute("data-theme",n);t.textContent=n==="light"?"🌙":"☀️";};
+</script>
+</body>
+</html>

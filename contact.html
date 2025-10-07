@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact - Student Portal</title>
+<style>
+:root{--bg:#1f1f1f;--text:#f1f1f1;--primary:#4db8ff;--card:#2a2a2a;}
+[data-theme="light"]{--bg:#f4f4f4;--text:#222;--primary:#0078ff;--card:#fff;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{background:var(--bg);color:var(--text);}
+.navbar{display:flex;justify-content:space-between;align-items:center;background:var(--card);padding:15px 25px;}
+.logo{color:var(--primary);font-weight:bold;}
+nav a{color:var(--text);text-decoration:none;margin-left:18px;}
+nav a:hover,nav a.active{color:var(--primary);border-bottom:2px solid var(--primary);}
+#theme-toggle{margin-left:15px;background:none;border:none;color:var(--text);cursor:pointer;}
+main{display:flex;justify-content:center;align-items:center;min-height:80vh;padding:20px;}
+.form-box{background:var(--card);padding:25px;border-radius:10px;max-width:450px;width:100%;}
+h2{text-align:center;color:var(--primary);margin-bottom:20px;}
+label{display:block;margin-bottom:6px;}
+input,textarea{width:100%;padding:10px;margin-bottom:15px;border:none;border-radius:6px;background:#333;color:white;}
+textarea{resize:none;}
+.btn{width:100%;background:var(--primary);color:#000;border:none;padding:10px;border-radius:6px;font-weight:bold;cursor:pointer;}
+.btn:hover{background:#36a2dd;}
+footer{background:var(--card);text-align:center;color:#aaa;padding:12px;margin-top:40px;}
+</style>
+</head>
+<body>
+<header>
+<div class="navbar">
+<div class="logo">Student Portal</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="contact.html" class="active">Contact</a>
+<button id="theme-toggle">🌙</button>
+</nav>
+</div>
+</header>
+<main>
+<div class="form-box">
+<h2>Contact Us</h2>
+<form>
+<label>Name</label>
+<input type="text" placeholder="Enter your name" required>
+<label>Email</label>
+<input type="email" placeholder="Enter your email" required>
+<label>Message</label>
+<textarea rows="5" placeholder="Write your message..." required></textarea>
+<button class="btn">Send Message</button>
+</form>
+</div>
+</main>
+<footer><p>&copy; 2025 Student Portal</p></footer>
+<script>
+const t=document.getElementById("theme-toggle");
+t.onclick=()=>{const c=document.documentElement.getAttribute("data-theme");const n=c==="light"?"dark":"light";
+document.documentElement.setAttribute("data-theme",n);t.textContent=n==="light"?"🌙":"☀️";};
+</script>
+</body>
+</html>

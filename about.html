@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Student Portal</title>
+  <style>
+    :root{--bg:#1f1f1f;--text:#f1f1f1;--primary:#4db8ff;--card:#2a2a2a;}
+    [data-theme="light"]{--bg:#f4f4f4;--text:#222;--primary:#0078ff;--card:#fff;}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+    body{background:var(--bg);color:var(--text);}
+    .navbar{display:flex;justify-content:space-between;align-items:center;background:var(--card);padding:15px 25px;}
+    .logo{font-weight:bold;color:var(--primary);}
+    nav a{color:var(--text);text-decoration:none;margin-left:18px;}
+    nav a:hover,nav a.active{color:var(--primary);border-bottom:2px solid var(--primary);}
+    #theme-toggle{margin-left:15px;background:none;border:none;color:var(--text);cursor:pointer;}
+    main{max-width:800px;margin:40px auto;background:var(--card);padding:25px;border-radius:10px;line-height:1.6;}
+    h2{text-align:center;color:var(--primary);margin-bottom:15px;}
+    footer{background:var(--card);text-align:center;padding:12px;color:#aaa;margin-top:40px;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">Student Portal</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="register.html">Register</a>
+        <button id="theme-toggle">🌙</button>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h2>About This Project</h2>
+    <p>The Student Portal is a responsive platform built using HTML5 and CSS3.</p>
+    <p>It helps students manage attendance, courses, and results efficiently while being accessible on any device.</p>
+  </main>
+  <footer><p>&copy; 2025 Student Portal</p></footer>
+  <script>
+    const t=document.getElementById("theme-toggle");
+    t.onclick=()=>{const c=document.documentElement.getAttribute("data-theme");const n=c==="light"?"dark":"light";document.documentElement.setAttribute("data-theme",n);t.textContent=n==="light"?"🌙":"☀️";};
+  </script>
+</body>
+</html>
